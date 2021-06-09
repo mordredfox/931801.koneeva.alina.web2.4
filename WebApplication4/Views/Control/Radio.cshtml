@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Radio";
+}
+<h2>@ViewData["Title"]</h2>
+@if (ViewBag.mess == null)
+{
+<form method="post">
+    <input type="radio" name="month" value="January" />
+    <span>January</span> <br />
+    <input type="radio" name="month" value="February" />
+    <span>February</span> <br />
+    <input type="radio" name="month" value="March" />
+    <span>March</span> <br />
+    <input type="radio" name="month" value="April" />
+    <span>April</span> <br />
+    <input type="radio" name="month" value="May" />
+    <span>May</span> <br />
+    <input type="radio" name="month" value="June" />
+    <span>June</span> <br />
+    <input type="radio" name="month" value="July" />
+    <span>July</span> <br />
+    <input type="radio" name="month" value="August" />
+    <span>August</span> <br />
+    <input type="radio" name="month" value="September" />
+    <span>September</span> <br />
+    <input type="radio" name="month" value="October" />
+    <span>October</span> <br />
+    <input type="radio" name="month" value="November" />
+    <span>November</span> <br />
+    <input type="radio" name="month" value="December" />
+    <span>December</span>
+    <br /> <br />
+    <input type="submit" value="Submit" />
+</form>
+}
+else
+{
+    <p><b>Month  </b>@ViewBag.mess</p>
+}

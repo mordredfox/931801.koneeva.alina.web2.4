@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Reset your password";
+}
+@if (ViewBag.n != 0)
+{
+    <h2>@ViewData["Title"]</h2>
+    <form method="post">
+        @if (ViewBag.mess == null)
+        {
+            <label>Email</label> <br />
+            <input type="text" name="email" /><br/><br />
+            <button name="action" value="Send">Send me a code</button>
+            <button name="action" value="NotSend">I have a code</button>
+        }
+        else
+        {
+            <label>Code</label> <br />
+            <input type="number" name="code" /> <br /> <br />
+            <input type="submit" name="action" value="Verify" />
+        }
+    </form>
+}
+else
+{
+    <h2>Success!</h2>
+    <p>Your password was sent on your Email!</p>
+}

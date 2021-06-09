@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Check Box";
+}
+<h2>@ViewData["Title"]</h2>
+@if (ViewBag.mess == null)
+{
+<form method="post">
+    <input type="checkbox" name="check" value="true" /> isSelected
+    <br />
+    <br />
+    <input type="submit" value="Submit" />
+</form>
+}
+else
+{
+    <p><b>isSelected  </b>@ViewBag.mess</p>
+}

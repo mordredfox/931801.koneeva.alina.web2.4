@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Text Area";
+}
+<h2>@ViewData["Title"]</h2>
+@if (ViewBag.mess == null)
+{
+    <form method="post">
+        <label>Text</label>
+        <br />
+        <textarea name="text"></textarea>
+        <br /> <br />
+        <input type="submit" value="Submit" />
+    </form>
+}
+else
+{
+    <p><b>Text  </b>@ViewBag.mess</p>
+}
+

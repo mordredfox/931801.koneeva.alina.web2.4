@@ -1,0 +1,76 @@
+﻿@model WebApplication4.Models.Registration
+@{
+    ViewData["Title"] = "Sign Up";
+}
+<h2>@ViewData["Title"]</h2>
+<form method="post">
+    <input type="hidden" name="count" value=@ViewBag.n />
+    @if (ViewBag.n == 0)
+    {
+        <label>First name</label> <br />
+        <input type="text" name="FirstName" />
+        <br />
+
+        <label>Last name</label> <br />
+        <input type="text" name="LastName" />
+        <br />
+
+        <label>Birthday</label> <br />
+        <select name="day">
+            @for (int i = 1; i < 32; i++)
+            {
+                <option value=@i>@i</option>
+            }
+        </select>
+        <select name="month">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+        <select name="year">
+            @for (int i = 1970; i < 2020; i++)
+            {
+                <option value=@i>@i</option>
+            }
+        </select>
+        <br />
+
+        <label>Gender</label> <br />
+        <input type="radio" name="Gender" value="Male" />
+        <span>Male</span> <br />
+        <input type="radio" name="Gender" value="Female" />
+        <span>Female</span> <br />
+        <input type="submit" value="Sign Up" />
+    }
+    else
+    {
+        <input type="hidden" asp-for="@Model.FirstName" />
+        <input type="hidden" asp-for="@Model.LastName" />
+        <input type="hidden" asp-for="@Model.Birthday" />
+        <input type="hidden" asp-for="@Model.Gender" />
+        <label>Email</label> <br />
+        <input type="text" name="Email" asp-for="@Model.Email" />
+        <br />
+        <label>Password</label> <br />
+        <input type="password" name="Password1" />
+        <br />
+        <label>Confirm password</label> <br />
+        <input type="password" name="Password2" />
+        <br />
+        <label style="color:red">@ViewBag.mess</label>
+        <br />
+        <input type="checkbox" name="check" value="true" /><span>Remember?</span>
+        <br />
+        <input type="submit" value="Complete sign up" />
+
+    }
+</form>
