@@ -9,10 +9,12 @@
     {
         <label>First name</label> <br />
         <input type="text" name="FirstName" />
-        <br />
+        <br><span style="color:red" asp-validation-for="FirstName"></span><br />
+        <br/>
 
         <label>Last name</label> <br />
         <input type="text" name="LastName" />
+        <br><span style="color:red" asp-validation-for="LastName"></span><br />
         <br />
 
         <label>Birthday</label> <br />
@@ -45,7 +47,7 @@
         <br />
 
         <label>Gender</label> <br />
-        <input type="radio" name="Gender" value="Male" />
+        <input type="radio" name="Gender" checked value="Male" />
         <span>Male</span> <br />
         <input type="radio" name="Gender" value="Female" />
         <span>Female</span> <br />
@@ -59,12 +61,15 @@
         <input type="hidden" asp-for="@Model.Gender" />
         <label>Email</label> <br />
         <input type="text" name="Email" asp-for="@Model.Email" />
+        <br><span style="color:red" asp-validation-for="Email"></span><br />
         <br />
         <label>Password</label> <br />
         <input type="password" name="Password1" />
+        <br><span style="color:red" asp-validation-for="Password"></span><br />
         <br />
         <label>Confirm password</label> <br />
         <input type="password" name="Password2" />
+        <br><span style="color:red" asp-validation-for="Password"></span><br />
         <br />
         <label style="color:red">@ViewBag.mess</label>
         <br />

@@ -43,6 +43,15 @@ namespace WebApplication4.Controllers
         {
             if(count == 0)
             {
+                //Console.WriteLine((string)Request.Form["FirstName"] == "t");
+                if ((string)Request.Form["FirstName"] == "" || (string)Request.Form["LastName"] == "")
+                {
+                    Console.WriteLine("jelly");
+                    ViewBag.n = 0;
+                    return View(model);
+                    //return View("SignUp");
+
+                }
                 string day = Request.Form["day"];
                 string month = Request.Form["month"];
                 string year = Request.Form["year"];
@@ -54,6 +63,14 @@ namespace WebApplication4.Controllers
             {
                 string pass = Request.Form["password1"];
                 string word = Request.Form["password2"];
+                if (pass == "" || word == "")
+                {
+                    Console.WriteLine("jelly");
+                    ViewBag.n = 1;
+                    return View(model);
+                    //return View("SignUp");
+
+                }
                 if (pass == word)
                 {
                     model.Password = pass;
